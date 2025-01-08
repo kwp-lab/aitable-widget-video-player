@@ -1,0 +1,79 @@
+.row {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.swatch {
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+  display: inline-block;
+  cursor: pointer
+}
+
+.colorPickerPopover {
+  position: absolute;
+  z-index: 2;
+}
+
+.colorPickerCover {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.flexCentercontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(17, 24, 39));
+  color: #fff;
+}
+
+.extraInfoFieldName {
+  color: rgb(250, 204, 21);
+  margin-bottom: .5rem;
+}
+
+.extraInfoFieldText {
+  color: #fff;
+  line-height: 2em;
+}
+
+.extraInfoLabelWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.extraInfoLabelWrapper svg {
+  max-width: 100%;
+  max-height: min-content;
+}
+
+.extraInfoLabel {
+  color: rgb(250, 204, 21);
+  font-size: 16px;
+  background-color: rgb(31, 41, 55);
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+.mt6 {
+  margin-top: 1.5rem;
+}
+
+.btnControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  height: 40px;
+}
+
+.btnControl button:active {
+  transform: scale(0.95);
+}

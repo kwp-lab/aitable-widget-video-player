@@ -1,0 +1,17 @@
+{
+  "packageId": "wpkdWtNNoyFmr",
+  "spaceId": "spc48NnazlGgm",
+  "entry": "./src/index.jsx",
+  "name": {
+    "zh-CN": "视频播放器",
+    "en-US": "Video Player"
+  },
+  "icon": "./package_icon.png",
+  "cover": "./cover.png",
+  "authorIcon": "./author_icon.png",
+  "description": {
+    "zh-CN": "读取表格视图中的视频附件，进行循环播放",
+    "en-US": "Read the video attachments in the datasheet view and play them in a loop"
+  },
+  "sandbox": true
+}
