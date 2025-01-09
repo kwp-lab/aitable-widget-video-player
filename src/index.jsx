@@ -241,6 +241,13 @@ export const VideoPlaylistPlayer = () => {
                     field.name,
                     records[currentIndex].getCellValueString(field.id)
                   );
+                } else if ([FieldType.SingleText, FieldType.Text].includes(field.type)) {
+                  const content = records[currentIndex].getCellValueString(field.id);
+                  if (content.startsWith("http")) {
+                    return renderUrlToQRCode(field.name, content);
+                  } else {
+                    return renderText(field.name, content);
+                  }
                 } else {
                   return renderText(
                     field.name,
