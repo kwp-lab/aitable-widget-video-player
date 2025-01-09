@@ -6,6 +6,7 @@ import {
   useFields,
   useField,
   FieldType,
+  useViewIds,
 } from "@apitable/widget-sdk";
 import { Typography, Button } from "@apitable/components";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@apitable/icons";
@@ -16,7 +17,8 @@ import style from "./index.css";
 export const VideoPlaylistPlayer = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // 当前播放的视频索引
 
-  const [viewId] = useCloudStorage("selectViewId", undefined);
+  const viewIds = useViewIds();
+  const [viewId] = useCloudStorage("selectViewId", viewIds[0]);
   const [videoFieldId] = useCloudStorage("videoFieldId", "");
   const [showExtraInfo] = useCloudStorage("showExtraInfo", false);
   const [extraInfoWidth] = useCloudStorage("extraInfoWidth", "20");
@@ -34,7 +36,7 @@ export const VideoPlaylistPlayer = () => {
   const records = useRecords(viewId, { filter: {} });
   const videoField = useField(videoFieldId);
 
-  // console.log({ records, viewId, currentIndex });
+  console.log({ records, viewId, currentIndex });
 
   useEffect(() => {
     if (records.length > 0 && currentIndex >= records.length) {
@@ -59,6 +61,9 @@ export const VideoPlaylistPlayer = () => {
         } else if (videoField.type === FieldType.Attachment) {
           const attachments = record.getCellValue(videoFieldId);
           url = attachments[0].url;
+        } else if (videoField.type === FieldType.SingleText || videoField.type === FieldType.Text) {
+          const content = record.getCellValueString(videoFieldId);
+          url = content.startsWith("http") ? content : "";
         }
 
         url && videos.push(url);

@@ -98,7 +98,7 @@ export const Setting = () => {
             viewId={viewId}
             fieldId={fieldId}
             onChange={(option) => setFieldId(option.value)}
-            allowedTypes={[FieldType.Attachment, FieldType.URL]}
+            allowedTypes={[FieldType.Attachment, FieldType.URL, FieldType.SingleText, FieldType.Text]}
           />
         </div>
       </div>
