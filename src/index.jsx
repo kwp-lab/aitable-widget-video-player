@@ -63,7 +63,7 @@ export const VideoPlaylistPlayer = () => {
           url = attachments[0].url;
         } else if (videoField.type === FieldType.SingleText || videoField.type === FieldType.Text) {
           const content = record.getCellValueString(videoFieldId);
-          url = content.startsWith("http") ? content : "";
+          url = content?.startsWith("http") ? content : "";
         }
 
         url && videos.push(url);
